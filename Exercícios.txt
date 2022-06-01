@@ -1,0 +1,73 @@
+1) Criar o MVC para "produto": 👍
+
+   a) criar tabela no workbench OK
+   b) criar as rotas:  /produto/form OK
+		       /produto/salvar OK
+   c) criar a view do formulário OK
+   d) criar a model OK?
+   e) criar controller OK
+   f) criar DAO OK
+
+2) Criar o MVC para "pessoa": 👍
+
+   a) criar tabela no workbench OK
+   b) criar as rotas:  /pessoa/form OK
+		       /pessoa/salvar OK
+   c) criar a view do formulário OK
+   d) criar a model OK
+   e) criar controller OK
+   f) criar DAO OK
+
+3) Criar o MVC para "funcionário": 👍
+
+   a) criar tabela no workbench     
+   b) criar as rotas:  /funcionario/form OK
+		       /funcionario/salvar OK
+   c) criar a view do formulário OK
+   d) criar a model OK
+   e) criar controller OK
+   f) criar DAO OK
+
+===========================================================
+"Recuperação": 👍
+
+4) Criar o MVC para "categoria do produto":
+
+   a) criar tabela no workbench OK
+   b) criar as rotas:  /categoria_produto/form OK
+		       /categoria_produto/save OK
+   c) criar a view do formulário OK
+   d) criar a model OK
+   e) criar controller OK
+   f) criar DAO OK
+
+========================================================
+Listar dados do MySQL na view (pessoa, produto e categoria de produtos): 👍
+
+	a) criar o método que faz o select na DAO OK
+	b) criar o método "fantoche" na model OK 
+	c) criar a table na view OK 
+	d) instanciar a model na controller e chamar a view OK
+
+==========================================================
+Fazer o CRUD (Create, Read(listagem), Update e Delete) das tabelas: 👍
+
+pessoa: insert OK
+	read OK
+        update OK
+        delete OK
+
+produto: insert OK
+	 read OK
+	 update OK
+	 delete OK
+
+categoria_produto: insert OK
+		   read OK
+	       	   update OK
+ 	  	   delete OK
+
+funcionario: insert OK
+             read OK
+             update OK
+             delete OK

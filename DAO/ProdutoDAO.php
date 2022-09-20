@@ -1,16 +1,16 @@
 <?php
 
-class ProdutoDAO
-{
-    private $conexao;
+namespace DAO;
 
-    function __construct() 
+use ProdutoModel;
+use \PDO;
+
+class ProdutoDAO extends DAO
+{
+
+    public function __construct()
     {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
-        $user = "root";
-        $pass = "etecjau";
-        
-        $this->conexao = new PDO($dsn, $user, $pass);
+        parent::__construct();
     }
 
     function insert(ProdutoModel $model) 

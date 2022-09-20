@@ -1,19 +1,18 @@
 <?php
 
-class CategoriaProdutoDAO
+namespace DAO;
+
+use CategoriaProdutoModel;
+use \PDO;
+
+class CategoriaProdutoDAO extends DAO
 {
-    private $conexao;
-
-    function __construct() 
+    public function __construct()
     {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
-        $user = "root";
-        $pass = "etecjau";
-        
-        $this->conexao = new PDO($dsn, $user, $pass);
-    }
+        parent::__construct();
+    } 
 
-    function insert(CAtegoriaProdutoModel $model) 
+    function insert(CategoriaProdutoModel $model) 
     {  
         $sql = "INSERT INTO categoria_produto 
                 (descricao) 

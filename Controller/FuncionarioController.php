@@ -1,5 +1,8 @@
 <?php
 
+namespace Controller;
+use FuncionarioModel;
+
 class FuncionarioController 
 {
    
@@ -30,22 +33,22 @@ class FuncionarioController
 
         include 'Model/FuncionarioModel.php';
         
-        $pessoa = new FuncionarioModel();
-        $pessoa->id = $_POST['id'];
+        $model = new FuncionarioModel();
+        $model->id = $_POST['id'];
         
-        $pessoa->nome = $_POST['nome'];
-        $pessoa->rg = $_POST['rg'];
-        $pessoa->cpf = $_POST['cpf'];
-        $pessoa->data_nascimento = $_POST['data_nascimento'];
-        $pessoa->email = $_POST['email'];
-        $pessoa->telefone = $_POST['telefone'];
-        $pessoa->endereco = $_POST['endereco'];
-        $pessoa->cargo = $_POST['cargo'];
-        $pessoa->horarioentrada = $_POST['horarioentrada'];
-        $pessoa->horariosaida = $_POST['horariosaida'];
-        $pessoa->salario = $_POST['salario'];
+        $model->nome = $_POST['nome'];
+        $model->rg = $_POST['rg'];
+        $model->cpf = $_POST['cpf'];
+        $model->data_nascimento = $_POST['data_nascimento'];
+        $model->email = $_POST['email'];
+        $model->telefone = $_POST['telefone'];
+        $model->endereco = $_POST['endereco'];
+        $model->cargo = $_POST['cargo'];
+        $model->horarioentrada = $_POST['horarioentrada'];
+        $model->horariosaida = $_POST['horariosaida'];
+        $model->salario = $_POST['salario'];
 
-        $pessoa->save();
+        $model->save();
 
         header("Location: /funcionario");
         

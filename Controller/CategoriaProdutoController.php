@@ -1,6 +1,9 @@
 <?php
 
-class CategoriaProdutoController
+namespace Controller;
+use CategoriaProdutoModel;
+
+class CategoriaProdutoController extends Controller
 {
     public static function index() 
     {
@@ -9,7 +12,7 @@ class CategoriaProdutoController
         $model = new CategoriaProdutoModel();
         $model->getAllRows();
 
-        include 'View/modules/CategoriaProduto/ListaCategorias.Produto.php';
+        parent::render('View/modules/CategoriaProduto/ListaCategorias.Produto', $model);
     }
 
     public static function form()
@@ -22,18 +25,18 @@ class CategoriaProdutoController
         {
             $model = $model->getById($_GET['id']);
         }
-        include 'View/modules/CategoriaProduto/formCategoriaProduto.php';
+        parent::render('View/modules/CategoriaProduto/formCategoriasProduto', $model);
     }
 
     public static function save()
     {
         include 'Model/CategoriaProduto.php';
 
-        $categoria_produto = new CategoriaProdutoModel();
-        $categoria_produto->id = $_POST['id'];
-        $categoria_produto->descricao = $_POST['descricao'];
+        $model = new CategoriaProdutoModel();
+        $model->id = $_POST['id'];
+        $model->descricao = $_POST['descricao'];
 
-        $categoria_produto->save();
+        $model->save();
 
         header("Location: /categoriaproduto");
     }

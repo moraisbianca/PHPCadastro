@@ -1,6 +1,9 @@
 <?php
 
-class ProdutoController
+namespace Controller;
+use ProdutoModel;
+
+class ProdutoController extends Controller
 {
     public static function index() 
     {
@@ -9,7 +12,7 @@ class ProdutoController
         $model = new ProdutoModel();
         $model->getAllRows();
 
-        include 'View/modules/Produto/ListaProduto.php';
+        parent::render('View/modules/Produto/ListaProduto', $model);
     }
 
     public static function form()
@@ -23,7 +26,7 @@ class ProdutoController
             $model = $model->getById($_GET['id']);
         }
 
-        include 'View/modules/Produto/ProdutoCadastro.php';
+        parent::render('View/modules/Produto/ProdutoCadastro', $model);
     }
 
     public static function save()
@@ -32,13 +35,13 @@ class ProdutoController
 
         // Abaixo cada propriedade do objeto sendo abastecida com os dados informados
         // pelo usuário no formulário (note o envio via POST)
-        $produto = new ProdutoModel();
-        $produto->id = $_POST['id'];
-        $produto->nome = $_POST['nome'];
-        $produto->preco = $_POST['preco'];
-        $produto->descricao = $_POST['descricao'];
+        $model = new ProdutoModel();
+        $model->id = $_POST['id'];
+        $model->nome = $_POST['nome'];
+        $model->preco = $_POST['preco'];
+        $model->descricao = $_POST['descricao'];
 
-        $produto->save();  // chamando o método save da model.
+        $model->save();  // chamando o método save da model.
 
         header("Location: /produto"); // redirecionando o usuário para outra rota.
     }

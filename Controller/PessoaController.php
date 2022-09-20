@@ -1,5 +1,9 @@
 <?php
 
+namespace Controller;
+use PessoaModel;
+
+
 /**
  * Classes Controller são responsáveis por processar as requisições do usuário.
  * Isso significa que toda vez que um usuário chama uma rota, um método (função)
@@ -8,19 +12,18 @@
  * buscar algo no banco de dados), redirecionar o usuário de rota, ou mesmo,
  * chamar outra Controller.
  */
-class PessoaController 
+class PessoaController extends Controller
 {
     /**
      * Os métodos index serão usados para devolver uma View.
      */
     public static function index() 
     {
-        include 'Model/PessoaModel.php';
 
         $model = new PessoaModel();
         $model->getAllRows();
 
-        include 'View/modules/Pessoa/ListaPessoas.php';
+        parent::render('View/modules/Pessoa/ListaPessoa', $model);
     }
 
    /**
@@ -28,16 +31,13 @@ class PessoaController
      */
     public static function form()
     {
-        include 'Model/PessoaModel.php';
 
         $model = new PessoaModel();
         
         if(isset($_GET['id'])) // se já existir id, então:
             $model = $model->getById($_GET['id']);
 
-        //var_dump($model); (despeja os dados)   
-
-        include 'View/modules/Pessoa/FormPessoa.php';
+        parent::render('Pessoa/FormPessoa', $model);
     }
 
     /**

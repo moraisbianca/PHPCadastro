@@ -1,8 +1,8 @@
 <?php
 
-namespace Controller;
-use PessoaModel;
+namespace App\Controller;
 
+use App\Model\PessoaModel;
 
 /**
  * Classes Controller são responsáveis por processar as requisições do usuário.
@@ -23,7 +23,7 @@ class PessoaController extends Controller
         $model = new PessoaModel();
         $model->getAllRows();
 
-        parent::render('View/modules/Pessoa/ListaPessoa', $model);
+        parent::render('Pessoa/ListaPessoas', $model);
     }
 
    /**

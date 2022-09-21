@@ -1,6 +1,10 @@
 <?php
 
-class PessoaModel
+namespace App\Model;
+
+use App\DAO\PessoaDAO;
+
+class PessoaModel extends Model
 {
     /**
      * Declaração das propriedades conforme campos da tabela no banco de dados.
@@ -16,13 +20,12 @@ class PessoaModel
      */
     public function save()
     {
-        include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO();
 
         // Se id for nulo, significa que trata-se de um novo registro
         // caso contrário, é um update porque a chave primária já existe.
-        if($this->id == null) 
+        if(empty($this->id)) 
         {
             // No que estamos enviado o proprio objeto model para o insert, por isso do this
             $dao->insert($this);
@@ -35,7 +38,6 @@ class PessoaModel
     // getAllRows serve para a listagem dos registro, ele pega todas as linhas do banco
     public function getAllRows()
     {
-        include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO();
 
@@ -46,7 +48,6 @@ class PessoaModel
     // getById serve para selecionar uma id especifica de um certo registro
     public function getById(int $id)
     {
-        include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO();
 
@@ -55,7 +56,6 @@ class PessoaModel
 
     public function delete(int $id)
     {
-        include 'DAO/PessoaDAO.php'; // Incluíndo o arquivo DAO
 
         $dao = new PessoaDAO();
 

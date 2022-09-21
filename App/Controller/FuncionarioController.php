@@ -1,38 +1,34 @@
 <?php
 
-namespace Controller;
-use FuncionarioModel;
+namespace App\Controller;
 
-class FuncionarioController 
+use App\Model\FuncionarioModel;
+
+class FuncionarioController extends Controller
 {
    
     public static function index() 
     {
-        include 'Model/FuncionarioModel.php';
-
         $model = new FuncionarioModel();
         $model->getAllRows();
 
-        include 'View/modules/Funcionario/ListaFuncionarios.php';
+        parent::render('Funcionario/ListaFuncionarios', $model);
     }
 
 
     public static function form()
     {
-        include 'Model/FuncionarioModel.php';
-
         $model = new FuncionarioModel();
         
         if(isset($_GET['id']))
             $model = $model->getById($_GET['id']);
 
-        include 'View/modules/Funcionario/FormFuncionario.php';
+            parent::render('Funcionario/FormFuncionario', $model);
     }
 
-    public static function save() {
-
-        include 'Model/FuncionarioModel.php';
-        
+    public static function save() 
+    {
+     
         $model = new FuncionarioModel();
         $model->id = $_POST['id'];
         
@@ -56,8 +52,6 @@ class FuncionarioController
 
     public static function delete()
     {
-        include 'Model/FuncionarioModel.php'; // inclus?o do arquivo model.
-
         $model = new FuncionarioModel();
 
         $model->delete( (int) $_GET['id'] ); // Enviando a vari?vel $_GET como inteiro para o m?todo delete

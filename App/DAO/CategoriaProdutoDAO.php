@@ -1,8 +1,9 @@
 <?php
 
-namespace DAO;
+namespace App\DAO;
 
-use CategoriaProdutoModel;
+use App\Model\CategoriaProdutoModel;
+
 use \PDO;
 
 class CategoriaProdutoDAO extends DAO

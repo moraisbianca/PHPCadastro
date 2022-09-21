@@ -1,8 +1,8 @@
 <?php
 
-namespace DAO;
+namespace App\DAO;
 
-use PessoaModel;
+use App\Model\PessoaModel;
 use \PDO;
 
 /**

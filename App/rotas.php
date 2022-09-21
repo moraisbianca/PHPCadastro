@@ -1,11 +1,15 @@
 <?php
 
+use App\Controller\ 
+{
+    PessoaController,
+    FuncionarioController,
+    ProdutoController,
+    CategoriaProdutoController
+};
+
 $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-include 'Controller/PessoaController.php';
-include 'Controller/ProdutoController.php';
-include 'Controller/CategoriaProdutoController.php';
-include 'Controller/FuncionarioController.php';
 
 switch($uri_parse)
 {

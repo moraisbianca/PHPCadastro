@@ -1,24 +1,21 @@
 <?php
 
-namespace Controller;
-use ProdutoModel;
+namespace App\Controller;
+
+use App\Model\ProdutoModel;
 
 class ProdutoController extends Controller
 {
     public static function index() 
     {
-        include 'Model/ProdutoModel.php';
-
         $model = new ProdutoModel();
         $model->getAllRows();
 
-        parent::render('View/modules/Produto/ListaProduto', $model);
+        parent::render('Produto/ListaProduto', $model);
     }
 
     public static function form()
     {
-        include 'Model/ProdutoModel.php';
-
         $model = new ProdutoModel();
 
         if(isset($_GET['id']))
@@ -26,7 +23,7 @@ class ProdutoController extends Controller
             $model = $model->getById($_GET['id']);
         }
 
-        parent::render('View/modules/Produto/ProdutoCadastro', $model);
+        parent::render('Produto/ProdutoCadastro', $model);
     }
 
     public static function save()

@@ -1,8 +1,8 @@
 <?php
 
-namespace DAO;
+namespace App\DAO;
 
-use FuncionarioModel;
+use App\Model\FuncionarioModel;
 use \PDO;
 
 class FuncionarioDAO extends DAO

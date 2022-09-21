@@ -71,3 +71,10 @@ funcionario: insert OK
              read OK
              update OK
              delete OK
+
+==========================================================
+Adicionar classes abstratas: controller, model e DAO 
+
+controller OK
+model
+DAO OK

@@ -1,14 +1,16 @@
 <?php
 
-class ProdutoModel
+namespace App\Model;
+
+use App\DAO\CategoriaProdutoDAO;
+
+class CategoriaProdutoModel extends Model
 {
-    public $id, $nome, $preco, $descricao;
+    public $id, $descricao;
 
     public function save()
     {
-        include 'DAO/ProdutoDAO.php';
-
-        $dao = new ProdutoDAO();
+        $dao = new CategoriaProdutoDAO();
 
         if($this->id == null) 
         {
@@ -20,27 +22,21 @@ class ProdutoModel
 
     public function getAllRows()
     {
-        include 'DAO/ProdutoDAO.php';
-
-        $dao = new ProdutoDAO();
+        $dao = new CategoriaProdutoDAO();
 
         $this->rows = $dao->select();
     }
 
     public function getById(int $id)
     {
-        include 'DAO/ProdutoDAO.php';
-
-        $dao = new produtoDAO();
+        $dao = new CategoriaProdutoDAO();
 
         return $dao->selectById($id);
     }
 
     public function delete(int $id)
     {
-        include 'DAO/ProdutoDAO.php'; // Incluíndo o arquivo DAO
-
-        $dao = new ProdutoDAO();
+        $dao = new CategoriaProdutoDAO();
 
         $dao->delete($id);
     }

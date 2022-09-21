@@ -1,8 +1,8 @@
 <?php
 
-namespace DAO;
+namespace App\DAO;
 
-use ProdutoModel;
+use App\Model\ProdutoModel;
 use \PDO;
 
 class ProdutoDAO extends DAO

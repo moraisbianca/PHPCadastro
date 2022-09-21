@@ -1,6 +1,10 @@
 <?php
 
-class FuncionarioModel
+namespace App\Model;
+
+use App\DAO\FuncionarioDAO;
+
+class FuncionarioModel extends Model
 {
    
     public $id, $nome, $rg, $cpf;
@@ -10,8 +14,6 @@ class FuncionarioModel
 
     public function save()
     {
-        include 'DAO/FuncionarioDAO.php';
-
         $dao = new FuncionarioDAO();
 
         if($this->id == null) 
@@ -25,8 +27,6 @@ class FuncionarioModel
 
     public function getAllRows()
     {
-        include 'DAO/FuncionarioDAO.php';
-
         $dao = new FuncionarioDAO();
 
         $this->rows = $dao->select();
@@ -35,8 +35,6 @@ class FuncionarioModel
 
     public function getById(int $id)
     {
-        include 'DAO/FuncionarioDAO.php';
-
         $dao = new FuncionarioDAO();
 
         return $dao->selectById($id);
@@ -44,8 +42,6 @@ class FuncionarioModel
 
     public function delete(int $id)
     {
-        include 'DAO/FuncionarioDAO.php'; // Incluíndo o arquivo DAO
-
         $dao = new FuncionarioDAO();
 
         $dao->delete($id);

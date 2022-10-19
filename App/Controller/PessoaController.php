@@ -19,6 +19,7 @@ class PessoaController extends Controller
      */
     public static function index() 
     {
+        parent::isAuthenticated();
 
         $model = new PessoaModel();
         $model->getAllRows();
@@ -31,6 +32,7 @@ class PessoaController extends Controller
      */
     public static function form()
     {
+        parent::isAuthenticated();
 
         $model = new PessoaModel();
         
@@ -43,9 +45,9 @@ class PessoaController extends Controller
     /**
      * Preenche um Model para que seja enviado ao banco de dados para salvar.
      */
-    public static function save() {
-
-        include 'Model/PessoaModel.php'; // inclusão do arquivo model.
+    public static function save() 
+    {
+        parent::isAuthenticated();
 
         // Abaixo cada propriedade do objeto sendo abastecida com os dados informados
         // pelo usuário no formulário (note o envio via POST)
@@ -66,8 +68,8 @@ class PessoaController extends Controller
 
     public static function delete()
     {
-        include 'Model/PessoaModel.php'; // inclusão do arquivo model.
-
+        parent::isAuthenticated();
+        
         $model = new PessoaModel();
 
         $model->delete( (int) $_GET['id'] ); // Enviando a variável $_GET como inteiro para o método delete

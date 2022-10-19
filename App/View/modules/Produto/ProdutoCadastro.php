@@ -16,6 +16,7 @@
 
 <body>
     <form action="/produto/save" method="post">
+
         <fieldset>
             <input type="hidden" name="id" value="<?= $model->id ?>">
             <legend>Cadastro de Produto</legend>
@@ -31,6 +32,7 @@
             <button type="submit">Enviar</button>
 
         </fieldset>
+
     </form>
 </body>
 

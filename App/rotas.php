@@ -14,7 +14,20 @@ $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch($uri_parse)
 {
-    ## ROTAS PARA LOGIN
+    ## ROTAS PARA CADASTRO (no arquivo de login)
+    case '/cadastrar':
+        LoginController::form();
+    break;
+
+    case '/cadastrar/save':
+        LoginController::save();
+    break;
+
+    case '/cadastrar/delete':
+        LoginController::delete();
+    break;
+
+    ## ROTAS PARA LOGAR
     case '/login':
         LoginController::index();
     break;
@@ -96,6 +109,6 @@ switch($uri_parse)
     break;
 
     default:
-        echo "erro 404";
+        echo "oi";
     break;
 }

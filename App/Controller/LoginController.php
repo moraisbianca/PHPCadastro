@@ -6,10 +6,36 @@ use App\Model\LoginModel;
 
 class LoginController extends Controller
 {
+    //CADASTRO
+    public static function form()
+    {
+        parent::isAuthenticated();
+
+        $model = new LoginModel();
+
+        if(isset($_GET['id']))
+            $model = $model->getById($_GET['id']);
+
+        parent::render('Login/CadastroUsuario', $model);
+    }
+
+    public static function save()
+    {
+
+    }
+
+    public static function delete()
+    {
+
+    }
+
+
+    //LOGIN
     public static function index()
     {
         parent::render('Login/FormLogin');
     }
+
 
     public static function auth()
     {
@@ -29,6 +55,7 @@ class LoginController extends Controller
         } else
             header("Location: /login?erro=true");
     }
+
 
     public static function logout()
     {

@@ -6,30 +6,6 @@ use App\Model\LoginModel;
 
 class LoginController extends Controller
 {
-    //CADASTRO
-    public static function form()
-    {
-        parent::isAuthenticated();
-
-        $model = new LoginModel();
-
-        if(isset($_GET['id']))
-            $model = $model->getById($_GET['id']);
-
-        parent::render('Login/CadastroUsuario', $model);
-    }
-
-    public static function save()
-    {
-
-    }
-
-    public static function delete()
-    {
-
-    }
-
-
     //LOGIN
     public static function index()
     {

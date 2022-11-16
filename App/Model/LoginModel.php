@@ -8,11 +8,6 @@ class LoginModel extends Model
 {
     public $id, $nome, $email, $senha;
 
-    public function getById()
-    {
-
-    }
-
     public function autenticar()
     {
         $dao = new LoginDAO();

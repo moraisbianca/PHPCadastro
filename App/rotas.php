@@ -3,6 +3,7 @@
 use App\Controller\ 
 {
     LoginController,
+    CadastroController,
     PessoaController,
     FuncionarioController,
     ProdutoController,
@@ -14,17 +15,21 @@ $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch($uri_parse)
 {
-    ## ROTAS PARA CADASTRO (no arquivo de login)
+    ## ROTAS PARA CADASTRO
     case '/cadastrar':
-        LoginController::form();
+        CadastroController::index();
+    break;
+
+    case '/cadastrar/form':
+        CadastroController::form();
     break;
 
     case '/cadastrar/save':
-        LoginController::save();
+        CadastroController::save();
     break;
 
     case '/cadastrar/delete':
-        LoginController::delete();
+        CadastroController::delete();
     break;
 
     ## ROTAS PARA LOGAR

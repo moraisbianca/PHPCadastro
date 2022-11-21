@@ -41,7 +41,7 @@ switch($uri_parse)
         LoginController::auth();
     break;
 
-    case '/login/logout':
+    case '/logout':
         LoginController::logout();
     break;
 

@@ -9,6 +9,8 @@ class FuncionarioController extends Controller
    
     public static function index() 
     {
+        parent::isAuthenticated();
+
         $model = new FuncionarioModel();
         $model->getAllRows();
 
@@ -18,6 +20,8 @@ class FuncionarioController extends Controller
 
     public static function form()
     {
+        parent::isAuthenticated();
+
         $model = new FuncionarioModel();
         
         if(isset($_GET['id']))
@@ -28,7 +32,8 @@ class FuncionarioController extends Controller
 
     public static function save() 
     {
-     
+        parent::isAuthenticated();
+             
         $model = new FuncionarioModel();
         $model->id = $_POST['id'];
         
@@ -52,6 +57,8 @@ class FuncionarioController extends Controller
 
     public static function delete()
     {
+        parent::isAuthenticated();
+        
         $model = new FuncionarioModel();
 
         $model->delete( (int) $_GET['id'] ); // Enviando a vari?vel $_GET como inteiro para o m?todo delete

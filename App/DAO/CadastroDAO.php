@@ -22,7 +22,7 @@ class CadastroDAO extends DAO
 
         $stmt->bindValue(1, $model->nome);
         $stmt->bindValue(2, $model->email);
-        $stmt->bindValue(3, $model->senha);
+        $stmt->bindValue(3, sha1($model->senha));
         
         $stmt->execute();      
     }

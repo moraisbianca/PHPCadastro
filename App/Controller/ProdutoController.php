@@ -8,6 +8,8 @@ class ProdutoController extends Controller
 {
     public static function index() 
     {
+        parent::isAuthenticated();
+
         $model = new ProdutoModel();
         $model->getAllRows();
 
@@ -16,6 +18,8 @@ class ProdutoController extends Controller
 
     public static function form()
     {
+        parent::isAuthenticated();
+
         $model = new ProdutoModel();
 
         if(isset($_GET['id']))
@@ -28,8 +32,7 @@ class ProdutoController extends Controller
 
     public static function save()
     {
-        include 'Model/ProdutoModel.php'; // inclusão do arquivo model.
-
+        parent::isAuthenticated();
         // Abaixo cada propriedade do objeto sendo abastecida com os dados informados
         // pelo usuário no formulário (note o envio via POST)
         $model = new ProdutoModel();
@@ -45,7 +48,7 @@ class ProdutoController extends Controller
 
     public static function delete()
     {
-        include 'Model/ProdutoModel.php'; // inclusão do arquivo model.
+        parent::isAuthenticated();
 
         $model = new ProdutoModel();
 

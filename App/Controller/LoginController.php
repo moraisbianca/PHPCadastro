@@ -15,14 +15,15 @@ class LoginController extends Controller
 
     public static function auth()
     {
-        $model = new LoginModel();
+        $login = new LoginModel();
 
-        $model->email = $_POST['email'];
-        $model->senha = $_POST['senha'];
+        $login->email = $_POST['email'];
+        $login->senha = $_POST['senha'];
 
-        $usuario_logado = $model->autenticar();
+        $usuario_logado = $login->autenticar();
 
-        if ($usuario_logado !== null) {
+        if ($usuario_logado !== null) 
+        {
 
             $_SESSION['usuario_logado'] = $usuario_logado;
 

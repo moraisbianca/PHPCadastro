@@ -36,7 +36,7 @@
             <label for="senha">Senha:</label>
             <input name="senha"
                    id="senha"
-                   type="text"
+                   type="password"
                    value="<?= $model->senha ?>"/>
 
             <button type="submit">Enviar</button>

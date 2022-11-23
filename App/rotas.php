@@ -1,5 +1,7 @@
 <?php
 
+use App\View\Home;
+
 use App\Controller\ 
 {
     LoginController,
@@ -114,6 +116,6 @@ switch($uri_parse)
     break;
 
     default:
-        echo "oi";
+        echo "teste";
     break;
 }
